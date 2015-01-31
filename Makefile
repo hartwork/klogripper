@@ -1,5 +1,9 @@
+all: klogripper
+
 klogripper: main.o
-	$(CC) $(LDFLAGS) main.o -o klogripper
+	$(LINK.o) $< -o $@
 
 clean:
-	rm -f klogripper main.o
+	$(RM) klogripper main.o
+
+.PHONY: all clean
